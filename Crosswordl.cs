@@ -1,8 +1,6 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
 using System.Diagnostics;
 using System.Globalization;
-using Windows.ApplicationModel.Activation;
-using Windows.UI.Notifications;
 
 class Crosswordl
 {
