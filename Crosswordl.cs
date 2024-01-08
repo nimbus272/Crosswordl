@@ -4,7 +4,7 @@ using System.Globalization;
 
 class Crosswordl
 {
-    static string CrosswordPath = Path.Combine(Environment.SpecialFolder.MyDocuments.ToString(), "Crosswords");
+    static string CrosswordPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Crosswords");
     static async Task Main(string[] args)
     {
         string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
@@ -13,7 +13,8 @@ class Crosswordl
         await DownloadFileAsync(currentDate);
         ToastNotificationManagerCompat.OnActivated += toastArgs =>
         {
-                OpenPDF(currentDate);
+            OpenPDF(currentDate);
+            Environment.Exit(0);
         };
         Thread.Sleep(10000);
     }
